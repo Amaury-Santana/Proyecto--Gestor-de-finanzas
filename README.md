@@ -1,4 +1,4 @@
-# Proyecto-- Gestión de finanzas
+# Proyecto Gestor de finanzas
 El proyecto nace sobre la necesidad como adolescente de controlar mi dinero y llevar una mejor vida financieria.Es un sistema que simula un gestor de finanzas personales, permitiendo registrar ingresos y gastos mensuales, categorizarlos, y calcular el balance e impuestos de cada mes.
 Se aplica una estructura de clases basada en herencia, agregación y composición para representar distintos tipos de transacciones. Las clases Gasto e Ingreso heredan de la clase abstracta Transaccion. Cada transacción está asociada a una Categoria, y todas se agrupan dentro de un ResumenMensual.
 

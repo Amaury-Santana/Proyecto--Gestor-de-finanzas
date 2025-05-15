@@ -21,4 +21,5 @@ El programa permite:
 
 # Consideraciones
 El programa corre solo en consola y está hecho con C++.
+
 El código para compilarlo esta por definirse en los próximos avances.

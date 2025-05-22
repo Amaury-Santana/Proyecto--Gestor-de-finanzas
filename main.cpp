@@ -5,15 +5,15 @@
 using namespace std;
 
 int main() {
-    //Crear categorías
+    
     Categoria categoriaIngreso("Sueldo", "Ingreso");
     Categoria categoriaGasto("Renta", "Gasto");
 
-    //Crear objetos concretos (como ejemplo)
+    //Creo los objetos concretos (como ejemplo)
     Ingreso ingreso1(12000, "2025-05-01", "Pago mensual", &categoriaIngreso, "Empresa DHL");
     Gasto gasto1(4000, "2025-05-03", "Pago de renta", &categoriaGasto, "Transferencia", true);
 
-    //Mostrar resultados de métodos sobreescritos
+    //Muestro resultados de métodos sobreescritos
     cout << ingreso1.mostrarDetalles() << endl;
     cout << "Impuesto sobre ingreso: " << ingreso1.calcularImpuesto() << endl;
 

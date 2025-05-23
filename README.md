@@ -21,6 +21,7 @@ El programa permite:
 
 # Casos que harían que el proyecto no funcione o que tenga que hacer algo al respecto
 Pense en los siguientes:
+
 Monto negativo o strings vacíos en descripcion, fuente o tipoPago.
 
 Input para fecha con signos o demás caracteres.

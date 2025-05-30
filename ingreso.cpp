@@ -18,5 +18,8 @@ string Ingreso::mostrarDetalles() {
 }
 //Impuesto fijo del 10% sobre ingresos
 double Ingreso::calcularImpuesto() {
-    return monto * 0.10; 
+    return monto * 0.10;
+}
+bool Ingreso::esIngreso() const {
+    return true; 
 }

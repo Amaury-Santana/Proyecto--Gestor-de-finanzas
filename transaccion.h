@@ -25,6 +25,9 @@ public:
     //Y estos son los  métodos virtuales que se sobreescriben en las hijas
     virtual string mostrarDetalles() = 0;
     virtual double calcularImpuesto() = 0;
+    virtual bool esIngreso() const = 0;
+    virtual ~Transaccion() {}  //Destructor virtual
+
 };
 
 #endif

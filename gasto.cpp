@@ -22,7 +22,7 @@ bool Gasto::getEsDeducible() {
 string Gasto::mostrarDetalles() {
     return "Gasto de " + to_string(monto) + " usando " + tipoPago;
 }
-// Cálculo de impuesto solo si el gasto es deducible
+//Cálculo de impuesto solo si el gasto es deducible
 double Gasto::calcularImpuesto() {
     if (esDeducible) {
         return monto * 0.08;
@@ -30,3 +30,9 @@ double Gasto::calcularImpuesto() {
         return 0.0;
     }
 }
+
+bool Gasto::esIngreso() const {
+    return false;
+}
+
+

@@ -2,23 +2,23 @@
 #include "categoria.h"
 #include "ingreso.h"
 #include "gasto.h"
+#include "resumenmensual.h"
 using namespace std;
 
 int main() {
+    Categoria cat1("Sueldo", "Ingreso");
+    Categoria cat2("Comida", "Gasto");
+
+    Transaccion* ingreso1 = new Ingreso(15000, "2025-06-01", "Pago mensual", &cat1, "Empresa XYZ");
+    Transaccion* gasto1 = new Gasto(2000, "2025-06-05", "Restaurante", &cat2, "Tarjeta", true);
+
+    ResumenMensual resumen(6, 2025);
+    resumen.agregarTransaccion(ingreso1);
+    resumen.agregarTransaccion(gasto1);
+
+    resumen.mostrarResumen();
+
     
-    Categoria categoriaIngreso("Sueldo", "Ingreso");
-    Categoria categoriaGasto("Renta", "Gasto");
-
-    //Creo los objetos concretos (como ejemplo)
-    Ingreso ingreso1(12000, "2025-05-01", "Pago mensual", &categoriaIngreso, "Empresa DHL");
-    Gasto gasto1(4000, "2025-05-03", "Pago de renta", &categoriaGasto, "Transferencia", true);
-
-    //Muestro resultados de métodos sobreescritos
-    cout << ingreso1.mostrarDetalles() << endl;
-    cout << "Impuesto sobre ingreso: " << ingreso1.calcularImpuesto() << endl;
-
-    cout << gasto1.mostrarDetalles() << endl;
-    cout << "Impuesto sobre gasto: " << gasto1.calcularImpuesto() << endl;
 
     return 0;
 }

@@ -17,6 +17,7 @@ public:
 
     string mostrarDetalles() override;
     double calcularImpuesto() override;
+    bool esIngreso() const override;
 };
 
 #endif

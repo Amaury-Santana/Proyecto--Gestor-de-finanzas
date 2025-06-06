@@ -1,13 +1,11 @@
 // Clase hija de Transaccion que representa un ingreso
 // Agrega el atributo fuente y sobreescribe los métodos virtuales con override como vimos en clase
-
 #ifndef INGRESO_H
 #define INGRESO_H
 
 #include "transaccion.h"
 using namespace std;
 
-//Heredación
 class Ingreso : public Transaccion {
 private:
     string fuente;
@@ -18,9 +16,9 @@ public:
 
     string getFuente();
 
-    string mostrarDetalles() override;
-    double calcularImpuesto() override;
-    bool esIngreso() const override;
+    string mostrarDetalles();     
+    double calcularImpuesto();    
+    bool esIngreso() const;       
 };
 
 #endif

@@ -1,16 +1,14 @@
-#ifndef RESUMENMENSUAL_H
-#define RESUMENMENSUAL_H
+// Clase que representa el resumen mensual con todas las transacciones de un mes/año específico
+// Contiene un arreglo de Transaccion* y métodos para agregar, calcular balance e imprimir
 
-#include <vector>
 #include "transaccion.h"
-using namespace std;
 
 class ResumenMensual {
 private:
     int mes;
     int year;
-    vector<Transaccion*> transacciones;
-
+    Transaccion* transacciones[100]; 
+    int contador; 
 public:
     ResumenMensual();
     ResumenMensual(int _mes, int _year);
@@ -19,7 +17,6 @@ public:
     double calcularBalance();
     double calcularImpuestos();
     void mostrarResumen();
-    const vector<Transaccion*>& getTransacciones();
+    Transaccion** getTransacciones();
+    int getCantidadTransacciones(); 
 };
-
-#endif

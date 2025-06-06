@@ -1,3 +1,7 @@
+// Implementación de Gasto
+// Muestra detalles del gasto y aplica deducción si es deducible (8%), a diferencia de ingreso este porcentaje solo se aplica si si es deducible y eso lo indica el usuario.
+
+
 #include "gasto.h"
 
 Gasto::Gasto() : Transaccion() {
@@ -20,9 +24,11 @@ bool Gasto::getEsDeducible() {
 }
 //Implemento el método que sobrescribe el virtual
 string Gasto::mostrarDetalles() {
-    return "Gasto de " + to_string(monto) + " usando " + tipoPago;
+    return "Gasto de " + to_string(monto) + " usando " + tipoPago +
+           " [" + categoria->getNombre() + "] - " + fecha + " - " + descripcion;
 }
-//Cálculo de impuesto solo si el gasto es deducible
+
+// Cálculo de impuesto solo si el gasto es deducible
 double Gasto::calcularImpuesto() {
     if (esDeducible) {
         return monto * 0.08;

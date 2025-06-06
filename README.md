@@ -21,7 +21,7 @@ El programa implementa un menú interactivo donde el usuario puede:
 - ResumenMensual: almacena las transacciones del mes, permite calcular impuestos, deducciones y mostrar resumen general.
 
 
-# Casos que harían que el proyecto no funcione o que tenga que hacer algo al respecto
+## Casos que harían que el proyecto no funcione o que tenga que hacer algo al respecto
 - Ingresar datos inválidos (montos negativos, fecha vacía, strings vacíos)
 - No sobrescribir correctamente los métodos virtuales (-mostrarDetalles() y calcularImpuesto())
 - Acceso fuera del límite del arreglo de transacciones (capacidad máxima: 100)

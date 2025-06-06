@@ -1,44 +1,41 @@
 # Proyecto Gestor de finanzas
-El proyecto nace sobre la necesidad como adolescente de controlar mi dinero y llevar una mejor vida financieria.Es un sistema que simula un gestor de finanzas personales, permitiendo registrar ingresos y gastos mensuales, categorizarlos, y calcular el balance e impuestos de cada mes.
-Se aplica una estructura de clases basada en herencia, agregación y composición para representar distintos tipos de transacciones. Las clases Gasto e Ingreso heredan de la clase abstracta Transaccion. Cada transacción está asociada a una Categoria, y todas se agrupan dentro de un ResumenMensual.
+El proyecto nace sobre la necesidad como adolescente de controlar mi dinero y llevar una mejor vida financieria. Es un sistema que permite al usuario gestionar sus finanzas mensuales registrando ingresos y gastos, clasificándolos por categorías, y mostrando un resumen con balance, impuestos generados y deducciones aplicadas.
 
-# Funcionalidad
-El programa permite:
 
--Registrar ingresos y gastos con fecha, descripción, monto y categoría.
+## Funcionalidad
+El programa implementa un menú interactivo donde el usuario puede:
 
--Clasificar las transacciones por medio de objetos Categoria.
+- Registrar ingresos (monto, fecha, fuente, categoría)
+- Registrar gastos (monto, fecha, tipo de pago, si es deducible, categoría)
+- Ver un resumen mensual con:
+  - Lista de transacciones
+  - Impuestos generados por ingresos
+  - Deducciones por gastos deducibles
+  - Balance final del mes
 
--Consultar un resumen mensual con:
+## Clases utilizadas
+- Transaccion (abstracta): clase base con atributos generales como monto, fecha y categoría.
+- Ingreso: hereda de Transaccion, agrega fuente de ingreso. Genera impuesto del 10%.
+- Gasto: hereda de Transaccion, agrega tipo de pago y si es deducible. Aplica deducción del 8% si es deducible.
+- Categoria: representa una categoría asociada a cada transacción (por ejemplo: “Sueldo”, “Comida”).
+- ResumenMensual: almacena las transacciones del mes, permite calcular impuestos, deducciones y mostrar resumen general.
 
-  1. Total de ingresos
-
-  2. Total de gastos
-
-  3. Cálculo de impuestos
-
-  4. Balance final del mes
 
 # Casos que harían que el proyecto no funcione o que tenga que hacer algo al respecto
-Pense en los siguientes:
-
-Monto negativo o strings vacíos en descripcion, fuente o tipoPago.
-
-Input para fecha con signos o demás caracteres.
-
-Instanciar Transaccion directamente, no compilaria porque busco hacerla abstracta.
-
-No sobrescribir métodos virtuales correctamente,lo que generaria un comportamiento inesperado.
-
-Inconsistencia entre tipo de transacción y tipo de categoría.
+- Ingresar datos inválidos (montos negativos, fecha vacía, strings vacíos)
+- No sobrescribir correctamente los métodos virtuales (-mostrarDetalles() y calcularImpuesto())
+- Acceso fuera del límite del arreglo de transacciones (capacidad máxima: 100)
+- Intentar instanciar la clase abstracta Transaccion.
+- Ingresar texto donde se espera un número (ej. monto o opción de menú)
 
 
-# Consideraciones para avance 2 
-Para este avance no añadi el codigo de la clase ResumenMensual ya que genere mi proyecto de una forma que se puedan usar todos los temas que llevaremos acabo y esta clase depende de si misma de polimorfismo con puntores y demás y eso todavia no lo hemos visto. Puse las demás clases que demuestran las 3 subcompetencias a evaluar este avance y lo ire cambiando, de igual forma genere un main.cpp para este avance y se ira cmabiando. Gracias
 
-Para correr y compilar este main.cpp:
-g++ main.cpp categoria.cpp transaccion.cpp ingreso.cpp gasto.cpp -o gestor_finanzas
-./gestor_finanzas  o   gestor_finanzas.exe
+# Compilación y ejecución
 
+### Compilar:
+```bash
+g++ main.cpp categoria.cpp transaccion.cpp ingreso.cpp gasto.cpp resumenmensual.cpp -o gestor_finanzas
+./gestor_finanzas      # En Linux o macOS
+gestor_finanzas.exe    # En Windows
 
 

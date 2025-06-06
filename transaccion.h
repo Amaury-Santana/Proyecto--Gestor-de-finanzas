@@ -1,3 +1,6 @@
+// Clase abstracta base para Ingreso y Gasto
+// Contiene atributos normales y métodos virtuales puros para usar polimorfismo
+
 #ifndef TRANSACCION_H
 #define TRANSACCION_H
 
@@ -26,7 +29,7 @@ public:
     virtual string mostrarDetalles() = 0;
     virtual double calcularImpuesto() = 0;
     virtual bool esIngreso() const = 0;
-    virtual ~Transaccion() {}  //Destructor virtual
+    virtual ~Transaccion() {}  
 
 };
 

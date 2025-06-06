@@ -8,7 +8,6 @@
 #include "transaccion.h"
 using namespace std;
 
-//Heredación
 class Gasto : public Transaccion {
 private:
     string tipoPago;
@@ -21,9 +20,9 @@ public:
     string getTipoPago();
     bool getEsDeducible();
 
-    string mostrarDetalles() override;
-    double calcularImpuesto() override;
-    bool esIngreso() const override;
+    string mostrarDetalles();    
+    double calcularImpuesto();    
+    bool esIngreso() const;       
 };
 
 #endif

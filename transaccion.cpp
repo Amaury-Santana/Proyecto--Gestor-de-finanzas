@@ -1,3 +1,6 @@
+// Métodos comunes de la clase Transaccion
+// Getters para monto, fecha, descripción y categoría
+
 #include "transaccion.h"
 
 Transaccion::Transaccion() {

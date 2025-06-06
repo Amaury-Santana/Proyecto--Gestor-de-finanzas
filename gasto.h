@@ -1,3 +1,7 @@
+// Clase hija de Transaccion que representa un gasto
+// Agrega atributos tipoPago y esDeducible
+
+
 #ifndef GASTO_H
 #define GASTO_H
 

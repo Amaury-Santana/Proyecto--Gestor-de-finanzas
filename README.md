@@ -34,7 +34,7 @@ El programa implementa un menú interactivo donde el usuario puede:
 
 ### Compilar:
 ```bash
-g++ main.cpp categoria.cpp transaccion.cpp ingreso.cpp gasto.cpp resumenmensual.cpp -o gestor_finanzas
+g++ categoria.cpp transaccion.cpp ingreso.cpp gasto.cpp resumenmensual.cpp main.cpp -o gestor_finanzas
 ./gestor_finanzas      # En Linux o mac
 gestor_finanzas.exe    # En Windows
 

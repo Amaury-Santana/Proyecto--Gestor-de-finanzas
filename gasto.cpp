@@ -1,34 +1,58 @@
-// Implementación de Gasto
-// Muestra detalles del gasto y aplica deducción si es deducible (8%), a diferencia de ingreso este porcentaje solo se aplica si si es deducible y eso lo indica el usuario.
-
+//gasto.cpp
 
 #include "gasto.h"
+
+
+// Constructor por defecto:
+// Inicializa tipo de pago como cadena vacía y deducible como falso.
 
 Gasto::Gasto() : Transaccion() {
     tipoPago = "";
     esDeducible = false;
 }
 
-Gasto::Gasto(double _monto, string _fecha, string _descripcion, Categoria* _categoria, string _tipoPago, bool _esDeducible)
-: Transaccion(_monto, _fecha, _descripcion, _categoria) {
+
+// Constructor con parámetros:
+// Inicializa todos los atributos del gasto, incluyendo si es deducible.
+
+Gasto::Gasto(double _monto, string _fecha, string _descripcion,
+             Categoria* _categoria, string _tipoPago, bool _esDeducible)
+    : Transaccion(_monto, _fecha, _descripcion, _categoria) {
     tipoPago = _tipoPago;
     esDeducible = _esDeducible;
 }
+
+
+// getTipoPago()
+// Regresa el tipo de pago con el que se realizó el gasto.
 
 string Gasto::getTipoPago() {
     return tipoPago;
 }
 
+
+// getEsDeducible()
+// Regresa true si el gasto es deducible.
+
 bool Gasto::getEsDeducible() {
     return esDeducible;
 }
-//Implemento el método que sobrescribe el virtual
+
+
+// mostrarDetalles()
+// Implementación del método sobrescrito.
+// Devuelve un string con los detalles del gasto.
+
 string Gasto::mostrarDetalles() {
     return "Gasto de " + to_string(monto) + " usando " + tipoPago +
-           " [" + categoria->getNombre() + "] - " + fecha + " - " + descripcion;
+           " [" + categoria->getNombre() + "] - " + fecha +
+           " - " + descripcion;
 }
 
-// Cálculo de impuesto solo si el gasto es deducible
+
+// calcularImpuesto()
+// Aplica el 8% de deducción si el gasto es deducible.
+
 double Gasto::calcularImpuesto() {
     if (esDeducible) {
         return monto * 0.08;
@@ -37,8 +61,10 @@ double Gasto::calcularImpuesto() {
     }
 }
 
+
+// esIngreso()
+// Indica que esta transacción no es un ingreso (es un gasto).
+
 bool Gasto::esIngreso() const {
     return false;
 }
-
-
